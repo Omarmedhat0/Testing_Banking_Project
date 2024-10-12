@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login Feature" parallel="instances" thread-count="1">
+    <listeners>
+        <listener class-name="PdfReportListener"/>
+    </listeners>
+    <test name="LogIn">
+        <classes>
+            <class name="VerifyTheLoginSection"/>
+        </classes>
+    </test>
+</suite>
+
+
+<!--<groups>-->
+<!--<run>-->
+<!--    <include name="Login"/>-->
+<!--</run>-->
+<!--</groups>-->
+
+
