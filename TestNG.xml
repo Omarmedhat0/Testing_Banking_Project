@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Login Feature" parallel="instances" thread-count="1">
     <listeners>
-        <listener class-name="PdfReportListener"/>
+        <listener class-name="Main.PdfReportListener"/>
     </listeners>
     <test name="LogIn">
         <classes>
-            <class name="VerifyTheLoginSection"/>
+            <class name="Login.VerifyTheLoginSection"/>
         </classes>
     </test>
 </suite>

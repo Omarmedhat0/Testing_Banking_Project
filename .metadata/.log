@@ -859,9 +859,9 @@ java.lang.Error: SWT Resource was not properly disposed
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+	at org.eclipse.equinox.launcher.Main.Util.invokeFramework(Main.Util.java:651)
+	at org.eclipse.equinox.launcher.Main.Util.basicRun(Main.Util.java:588)
+	at org.eclipse.equinox.launcher.Main.Util.run(Main.Util.java:1459)
 !SESSION 2024-10-12 19:41:09.307 -----------------------------------------------
 eclipse.buildId=4.33.0.20240905-0613
 java.version=21.0.4

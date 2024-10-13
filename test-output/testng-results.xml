@@ -5,36 +5,36 @@
   <suite started-at="2024-10-12T23:44:50 EEST" name="Login Feature" finished-at="2024-10-12T23:45:16 EEST" duration-ms="26382">
     <groups>
       <group name="Login">
-        <method signature="VerifyTheLoginSection.Verify_Succeful_Login()[pri:9, instance:VerifyTheLoginSection@54d9d12d]" name="Verify_Succeful_Login" class="VerifyTheLoginSection"/>
+        <method signature="Login.VerifyTheLoginSection.Verify_Succeful_Login()[pri:9, instance:Login.VerifyTheLoginSection@54d9d12d]" name="Verify_Succeful_Login" class="Login.VerifyTheLoginSection"/>
       </group> <!-- Login -->
     </groups>
     <test started-at="2024-10-12T23:44:50 EEST" name="LogIn" finished-at="2024-10-12T23:45:16 EEST" duration-ms="26382">
-      <class name="VerifyTheLoginSection">
-        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:44:50 EEST" name="Launch_Browser" finished-at="2024-10-12T23:45:10 EEST" duration-ms="19831" status="PASS">
+      <class name="Login.VerifyTheLoginSection">
+        <test-method is-config="true" signature="Launch_Browser()[pri:0, instance:Login.VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:44:50 EEST" name="Launch_Browser" finished-at="2024-10-12T23:45:10 EEST" duration-ms="19831" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Launch_Browser -->
-        <test-method signature="Verify_BlankData_For_UserID_Or_Password()[pri:1, instance:VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:45:10 EEST" name="Verify_BlankData_For_UserID_Or_Password" finished-at="2024-10-12T23:45:11 EEST" duration-ms="761" status="PASS">
+        <test-method signature="Verify_BlankData_For_UserID_Or_Password()[pri:1, instance:Login.VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:45:10 EEST" name="Verify_BlankData_For_UserID_Or_Password" finished-at="2024-10-12T23:45:11 EEST" duration-ms="761" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_BlankData_For_UserID_Or_Password -->
-        <test-method signature="Verify_Enter_Wrong_UserId()[pri:2, instance:VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:45:11 EEST" name="Verify_Enter_Wrong_UserId" finished-at="2024-10-12T23:45:12 EEST" duration-ms="1327" status="PASS">
+        <test-method signature="Verify_Enter_Wrong_UserId()[pri:2, instance:Login.VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:45:11 EEST" name="Verify_Enter_Wrong_UserId" finished-at="2024-10-12T23:45:12 EEST" duration-ms="1327" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_Enter_Wrong_UserId -->
-        <test-method signature="Verify_Enter_Wrong_Password()[pri:3, instance:VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:45:12 EEST" name="Verify_Enter_Wrong_Password" finished-at="2024-10-12T23:45:14 EEST" duration-ms="1849" status="PASS">
+        <test-method signature="Verify_Enter_Wrong_Password()[pri:3, instance:Login.VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:45:12 EEST" name="Verify_Enter_Wrong_Password" finished-at="2024-10-12T23:45:14 EEST" duration-ms="1849" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_Enter_Wrong_Password -->
-        <test-method signature="Verify_Succeful_Login()[pri:9, instance:VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:45:14 EEST" name="Verify_Succeful_Login" finished-at="2024-10-12T23:45:16 EEST" duration-ms="1895" status="PASS">
+        <test-method signature="Verify_Succeful_Login()[pri:9, instance:Login.VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:45:14 EEST" name="Verify_Succeful_Login" finished-at="2024-10-12T23:45:16 EEST" duration-ms="1895" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_Succeful_Login -->
-        <test-method is-config="true" signature="Close_Browser()[pri:0, instance:VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:45:16 EEST" name="Close_Browser" finished-at="2024-10-12T23:45:16 EEST" duration-ms="392" status="PASS">
+        <test-method is-config="true" signature="Close_Browser()[pri:0, instance:Login.VerifyTheLoginSection@54d9d12d]" started-at="2024-10-12T23:45:16 EEST" name="Close_Browser" finished-at="2024-10-12T23:45:16 EEST" duration-ms="392" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Close_Browser -->
-      </class> <!-- VerifyTheLoginSection -->
+      </class> <!-- Login.VerifyTheLoginSection -->
     </test> <!-- LogIn -->
   </suite> <!-- Login Feature -->
 </testng-results>

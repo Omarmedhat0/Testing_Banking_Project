@@ -103,22 +103,22 @@
                     <div class="method-list-content passed suite-Login_Feature">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Login_Feature" title="VerifyTheLoginSection" class="method navigator-link" hash-for-method="Verify_BlankData_For_UserID_Or_Password">Verify_BlankData_For_UserID_Or_Password</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Login_Feature" title="Login.VerifyTheLoginSection" class="method navigator-link" hash-for-method="Verify_BlankData_For_UserID_Or_Password">Verify_BlankData_For_UserID_Or_Password</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Login_Feature" title="VerifyTheLoginSection" class="method navigator-link" hash-for-method="Verify_Enter_Wrong_Password">Verify_Enter_Wrong_Password</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Login_Feature" title="Login.VerifyTheLoginSection" class="method navigator-link" hash-for-method="Verify_Enter_Wrong_Password">Verify_Enter_Wrong_Password</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Login_Feature" title="VerifyTheLoginSection" class="method navigator-link" hash-for-method="Verify_Enter_Wrong_UserId">Verify_Enter_Wrong_UserId</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Login_Feature" title="Login.VerifyTheLoginSection" class="method navigator-link" hash-for-method="Verify_Enter_Wrong_UserId">Verify_Enter_Wrong_UserId</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Login_Feature" title="VerifyTheLoginSection" class="method navigator-link" hash-for-method="Verify_Succeful_Login">Verify_Succeful_Login</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Login_Feature" title="Login.VerifyTheLoginSection" class="method navigator-link" hash-for-method="Verify_Succeful_Login">Verify_Succeful_Login</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Login_Feature -->
@@ -136,7 +136,7 @@
           <div class="suite-Login_Feature-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">VerifyTheLoginSection</span>
+              <span class="class-name">Login.VerifyTheLoginSection</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -180,11 +180,11 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;1&quot; parallel=&quot;instances&quot; name=&quot;Login Feature&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;listeners&gt;
-    &lt;listener class-name=&quot;PdfReportListener&quot;/&gt;
+    &lt;listener class-name=&quot;Main.PdfReportListener&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;1&quot; parallel=&quot;instances&quot; name=&quot;LogIn&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;VerifyTheLoginSection&quot;/&gt;
+      &lt;class name=&quot;Login.VerifyTheLoginSection&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- LogIn --&gt;
 &lt;/suite&gt; &lt;!-- Login Feature --&gt;
@@ -235,19 +235,19 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Verify_Succeful_Login')
-data.setCell(0, 2, 'VerifyTheLoginSection')
+data.setCell(0, 2, 'Login.VerifyTheLoginSection')
 data.setCell(0, 3, 1978);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Verify_Enter_Wrong_Password')
-data.setCell(1, 2, 'VerifyTheLoginSection')
+data.setCell(1, 2, 'Login.VerifyTheLoginSection')
 data.setCell(1, 3, 1239);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'Verify_Enter_Wrong_UserId')
-data.setCell(2, 2, 'VerifyTheLoginSection')
+data.setCell(2, 2, 'Login.VerifyTheLoginSection')
 data.setCell(2, 3, 1076);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'Verify_BlankData_For_UserID_Or_Password')
-data.setCell(3, 2, 'VerifyTheLoginSection')
+data.setCell(3, 2, 'Login.VerifyTheLoginSection')
 data.setCell(3, 3, 345);
 window.suiteTableData['Login_Feature']= { tableData: data, tableDiv: 'times-div-Login_Feature'}
 return data;
@@ -279,7 +279,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">VerifyTheLoginSection</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Login.VerifyTheLoginSection</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">Launch_Browser</span>
                 <span class="method-start">0 ms</span>
