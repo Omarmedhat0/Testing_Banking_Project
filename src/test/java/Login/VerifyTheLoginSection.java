@@ -4,6 +4,7 @@ import Main.CustomListener;
 import Main.Util;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -13,14 +14,18 @@ import org.testng.asserts.SoftAssert;
 import java.time.Duration;
 
 @Listeners (CustomListener.class)
-public class VerifyTheLoginSection extends Util {
+public class VerifyTheLoginSection {
+    static WebDriver Driver1 ;
+    static String ActualResult ;
+    Alert WrongUserAlert ;
+    SoftAssert SoftAssert_Login = new SoftAssert();
 
     @BeforeTest (groups = "Login")
     public void Launch_Browser()
     {
         System.out.println("launching chrome browser");
         Driver1 = new ChromeDriver();
-        Driver1.get(BaseUrl);
+        Driver1.get(Util.BaseUrl) ;
         Driver1.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
     @AfterTest (groups = "Login")
@@ -41,15 +46,16 @@ public class VerifyTheLoginSection extends Util {
     */
     @Test (priority = 9 , groups = "Login")
     public void Verify_Succeful_Login() {
-        String ActualResult ;
-        String ExpectedResult = "Welcome To Manager's Page of Guru99 Bank" ;
-        SoftAssert LoginSucced = new SoftAssert();
-        Driver1.findElement(By.name("uid")).sendKeys(UserID);
-        Driver1.findElement(By.name("password")).sendKeys(Password);
+        Driver1.findElement(By.name("uid")).clear();
+        Driver1.findElement(By.name("uid")).sendKeys(Util.UserID);
+
+        Driver1.findElement(By.name("password")).clear();
+        Driver1.findElement(By.name("password")).sendKeys(Util.Password);
+
         Driver1.findElement(By.name("btnLogin")).click();
         ActualResult =Driver1.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[2]/td/marquee")).getText();
-        LoginSucced.assertEquals(ActualResult,ExpectedResult);
-        LoginSucced.assertAll();
+        SoftAssert_Login.assertEquals(ActualResult,Util.Expected_Result_Title);
+        SoftAssert_Login.assertAll();
     }
 
     /**
@@ -64,22 +70,14 @@ public class VerifyTheLoginSection extends Util {
             4) Click Login
     */    
     @Test (priority = 1)
-    public void Verify_BlankData_For_UserID_Or_Password() {
-        String UserIDActualResult ;
-        String UserIDExpectedResult = "User-ID must not be blank" ;
-        String PasswordIDActualResult ;
-        String PasswordExpectedResult = "Password must not be blank" ;
-        SoftAssert BlankUserID = new SoftAssert();
-        SoftAssert BlankPassword = new SoftAssert();
+    public void Verify_BlankData_For_UserID() {
+
         Driver1.findElement(By.name("uid")).click();
         Driver1.findElement(By.name("password")).click();
-        Driver1.findElement(By.name("uid")).click();
-        UserIDActualResult = Driver1.findElement(By.id("message23")).getText();
-        PasswordIDActualResult = Driver1.findElement(By.id("message18")).getText();
-        BlankUserID.assertEquals(UserIDActualResult,UserIDExpectedResult);
-        BlankPassword.assertEquals(PasswordIDActualResult,PasswordExpectedResult);
-        BlankPassword.assertAll();
-        BlankUserID.assertAll();
+        ActualResult = Driver1.findElement(By.id("message23")).getText();
+        SoftAssert_Login.assertEquals(ActualResult,Util.Expected_Result_BlankUserID);
+        SoftAssert_Login.assertAll();
+
     }
 
     /**
@@ -89,24 +87,18 @@ public class VerifyTheLoginSection extends Util {
     *        ************** 
     * @Steps        
     *       1)  Go to http://www.demo.guru99.com/V4/
-            2) Enter valid wrong UserId
-            3) Enter valid Password
+            2) Enter empty UserId
+            3) Enter empty Password
             4) Click Login
-    */
+    */    
     @Test (priority = 2)
-    public void Verify_Enter_Wrong_UserId() {
-        Alert WrongUserAlert ;
-        String ActualResult ;
-        String ExpectedResult = "User or Password is not valid" ;
-        SoftAssert LoginFailed = new SoftAssert();
-        Driver1.findElement(By.name("uid")).sendKeys(RandomUserID);
-        Driver1.findElement(By.name("password")).sendKeys(Password);
-        Driver1.findElement(By.name("btnLogin")).click();
-        WrongUserAlert = Driver1.switchTo().alert();
-        ActualResult = WrongUserAlert.getText();
-        WrongUserAlert.accept();
-        LoginFailed.assertEquals(ActualResult,ExpectedResult);
-        LoginFailed.assertAll();
+    public void Verify_BlankData_For_Password() {
+
+        Driver1.findElement(By.name("password")).click();
+        Driver1.findElement(By.name("uid")).click();
+        ActualResult = Driver1.findElement(By.id("message18")).getText();
+        SoftAssert_Login.assertEquals(ActualResult,Util.Expected_Result_BlankPassword);
+        SoftAssert_Login.assertAll();
 
     }
 
@@ -117,24 +109,56 @@ public class VerifyTheLoginSection extends Util {
     *        ************** 
     * @Steps        
     *       1)  Go to http://www.demo.guru99.com/V4/
+            2) Enter valid wrong UserId
+            3) Enter valid Password
+            4) Click Login
+    */
+    @Test (priority = 3)
+    public void Verify_Enter_Wrong_UserId() {
+    
+        Driver1.findElement(By.name("uid")).clear();
+        Driver1.findElement(By.name("uid")).sendKeys(Util.RandomUserID);
+
+        Driver1.findElement(By.name("password")).clear();
+        Driver1.findElement(By.name("password")).sendKeys(Util.Password);
+
+        Driver1.findElement(By.name("btnLogin")).click();
+
+        WrongUserAlert = Driver1.switchTo().alert();
+        ActualResult = WrongUserAlert.getText();
+        WrongUserAlert.accept();
+        SoftAssert_Login.assertEquals(ActualResult,Util.Expected_Result_WrongUserOrPass);
+        SoftAssert_Login.assertAll();
+
+    }
+
+    /**
+    * 
+    * @author Omar Medhat
+    * @details Test Script 01 - Test Case 5
+    *        ************** 
+    * @Steps        
+    *       1)  Go to http://www.demo.guru99.com/V4/
             2) Enter valid UserId
             3) Enter valid wrong Password
             4) Click Login
     */
-    @Test (priority = 3)
+    @Test (priority = 4)
     public void Verify_Enter_Wrong_Password() {
-        Alert WrongUserAlert ;
-        String ActualResult ;
-        String ExpectedResult = "User or Password is not valid" ;
-        SoftAssert LoginFailed = new SoftAssert();
-        Driver1.findElement(By.name("uid")).sendKeys(UserID);
-        Driver1.findElement(By.name("password")).sendKeys(RandomPassword);
+
+        Driver1.findElement(By.name("uid")).clear();
+        Driver1.findElement(By.name("uid")).sendKeys(Util.UserID);
+
+        Driver1.findElement(By.name("password")).clear();
+        Driver1.findElement(By.name("password")).sendKeys(Util.RandomPassword);
+
         Driver1.findElement(By.name("btnLogin")).click();
+
         WrongUserAlert = Driver1.switchTo().alert();
         ActualResult = WrongUserAlert.getText();
         WrongUserAlert.accept();
-        LoginFailed.assertEquals(ActualResult,ExpectedResult);
-        LoginFailed.assertAll();
+        SoftAssert_Login.assertEquals(ActualResult,Util.Expected_Result_WrongUserOrPass);
+        SoftAssert_Login.assertAll();
 
     }
 }
